@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: worker-deployment
+  name: worker-deployment
+  namespace: vote
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker-deployment
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: worker-deployment
+    spec:
+      containers:
+      - image: kodekloud/examplevotingapp_worker
+        name: examplevotingapp-worker-9mm8s
+        resources: {}
